@@ -25,7 +25,7 @@ export function About() {
         <div className="hidden md:block flex-shrink-0 relative z-10">
           <img
             src="https://avatars.githubusercontent.com/u/15214389"
-            alt="Pedro Chaves"
+            alt="Foto de perfil de Pedro Chaves"
             className="w-36 h-36 md:w-44 md:h-44 rounded-full shadow-2xl object-cover ring-offset-4 ring-offset-white transition-transform duration-300 hover:scale-105"
           />
         </div>

@@ -7,12 +7,14 @@ export function LanguageSwitcher() {
       <button
         onClick={() => i18n.changeLanguage("pt-BR")}
         className={i18n.language === "pt-BR" ? "font-bold underline" : ""}
+        aria-label="Mudar idioma para português"
       >
         PT
       </button>
       <button
         onClick={() => i18n.changeLanguage("en")}
         className={i18n.language === "en" ? "font-bold underline" : ""}
+        aria-label="Change language to English"
       >
         EN
       </button>

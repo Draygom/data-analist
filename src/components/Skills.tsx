@@ -96,7 +96,7 @@ export function Skills() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-white p-2 shadow">
                     <img
                       src={skill.icon}
-                      alt={skill.name}
+                      alt={`Ícone da habilidade ${skill.name}`}
                       className="h-10 w-10 rounded"
                     />
                   </div>
