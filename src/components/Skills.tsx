@@ -1,8 +1,22 @@
 import { HiAcademicCap } from "react-icons/hi";
 import { HiCodeBracketSquare } from "react-icons/hi2";
+import { useTranslation } from "react-i18next";
 
 export function Skills() {
+  const { t } = useTranslation();
+
   const educations = [
+    {
+      name: "Bachelor in Computer Science",
+      description: "Pitágoras College of Teixeira de Freitas",
+    },
+    {
+      name: "Microsoft Power BI Data Analyst",
+      description: "Course PL-300T00-A: Microsoft Power BI Data Analyst",
+    },
+  ];
+
+  const educationsPtbr = [
     {
       name: "Bacharel em Ciência da Computação",
       description: "Faculdade Pitágoras de Teixeira de Freitas",
@@ -34,15 +48,17 @@ export function Skills() {
   return (
     <section className="rounded-br-[80px] bg-gradient-to-tr from-zinc-900 to-black md:rounded-br-[180px]">
       <div className="container mx-auto max-w-4xl p-4 py-12">
-        <div className="relative mb-4 p-4 text-center">
-          <h2 className="relative z-50 mb-2 font-bold text-gradient">
-            <span className="mr-2 font-headline text-3xl">Educação &</span>
-            <span className="font-handwriting text-4xl">Skills</span>
+        <div className="relative mb-4 p-4 text-center text-white">
+          <h2 className="relative z-50 mb-2 font-bold">
+            <span className="mr-2 font-headline text-3xl text-gradient">
+              {t("skills.title-1")}
+            </span>
+            <span className="font-handwriting text-4xl text-yellow-400">
+              {t("skills.title-2")}
+            </span>
           </h2>
 
-          <p className="relative text-sm text-gray-400">
-            Analista de Dados | Power BI | SQL | Python
-          </p>
+          <p className="relative text-sm text-gray-400">{t("skills.copy")}</p>
           <div className="absolute left-1/2 top-3 z-0 h-10 w-10 rounded-lg bg-yellow-400/20" />
         </div>
 
@@ -50,17 +66,19 @@ export function Skills() {
           <div className="basis-1/2">
             <h3 className="mb-4 flex items-center gap-2 text-lg font-extrabold text-gradient">
               <HiAcademicCap className="h-8 w-8 text-yellow-400" />
-              Educação
+              {t("skills.sub-title")}
             </h3>
 
-            {educations.map((education, index) => (
-              <div key={`education-${index}`} className="section-card mb-4">
-                {education.name}
-                <p className="relative text-sm text-gray-600">
-                  {education.description}
-                </p>
-              </div>
-            ))}
+            {(t("skills.lang") === "pt-br" ? educationsPtbr : educations).map(
+              (education, index) => (
+                <div key={`education-${index}`} className="section-card mb-4">
+                  {education.name}
+                  <p className="relative text-sm text-gray-600">
+                    {education.description}
+                  </p>
+                </div>
+              )
+            )}
           </div>
 
           <div className="basis-1/2">

@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Hi, my name is",
+    "subtitle": "Data Analyst",
+    "copy": "Telling stories through data."
+  },
+  "about": {
+    "title-1": "About",
+    "title-2": "me",
+    "description": "I have a degree in Computer Science and work as a Data Analyst and Power BI Consultant, with over 5 years of experience. My goal is to help your company transform data into valuable insights, facilitating strategic decision-making.",
+    "card-hello": "Hello,",
+    "card-intro": "I am",
+    "card-age": "Age:",
+    "card-address": "Address:",
+    "card-status": "Available"
+  },
+  "services": {
+    "header": "What I do best",
+    "title": "Services",
+    "description": "I build reports with interactive and fully automated dashboards, eliminating the need for spreadsheets so you can focus on what needs to be done!",
+    "lang": "en"
+  },
+  "projects": {
+    "title-1": "Projects &",
+    "title-2": "Portfolio",
+    "copy": "Some of the projects I have completed throughout my journey as an Analyst and Consultant",
+    "lang": "en"
+  },
+  "skills": {
+    "title-1": "Education &",
+    "title-2": "Skills",
+    "copy": "Computer Scientist | Data Analyst | Power BI | SQL | Python",
+    "sub-title": "Education",
+    "lang": "en"
+  },
+  "contact": {
+    "title-1": "Contact",
+    "title-2": "me",
+    "copy": "Get in touch through the form below, I will certainly be able to help you.",
+    "message": "Message:",
+    "name": "Your name:",
+    "email": "Your E-mail:",
+    "button": "Send message",
+    "error": "An error occurred while sending the message, please try again later."
+  }
+}

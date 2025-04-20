@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Olá, me chamo",
+    "subtitle": "Analista de Dados",
+    "copy": "Contando histórias através dos dados"
+  },
+  "about": {
+    "title-1": "Sobre",
+    "title-2": "mim",
+    "description": "Sou formado em Ciência da Computação e atuo como Analista de Dados e Consultor de Power BI, com mais de 5 anos de experiência. Meu objetivo é ajudar sua empresa a transformar dados em insights valiosos, facilitando a tomada de decisões estratégicas.",
+    "card-hello": "Olá,",
+    "card-intro": "Meu nome é",
+    "card-age": "Idade",
+    "card-address": "Endereço",
+    "card-status": "Disponível"
+  },
+  "services": {
+    "header": "O que faço de melhor",
+    "title": "Serviços",
+    "description": "Construo relatórios com dashboards interativos e totalmente automatizados, eliminando a necessidade de planilhas para que você possa focar no que deve ser feito!",
+    "lang": "pt-br"
+  },
+  "projects": {
+    "title-1": "Projetos &",
+    "title-2": "Portifólio",
+    "copy": "Alguns dos projetos que já realizei ao longo da minha trajetória como Analista e Consultor",
+    "lang": "pt-br"
+  },
+  "skills": {
+    "title-1": "Educação &",
+    "title-2": "Habilidades",
+    "copy": "Cientista da Computação | Analista de Dados | Power BI | SQL | Python",
+    "sub-title": "Educação",
+    "lang": "pt-br"
+  },
+  "contact": {
+    "title-1": "Contato",
+    "title-2": "Comigo",
+    "copy": "Entre em contato através do formulário abaixo, com certeza irei poder te ajudar.",
+    "message": "Mensagem:",
+    "name": "Seu nome:",
+    "email": "Seu E-mail:",
+    "button": "Enviar mensagem",
+    "error": "Ocorreu um erro ao enviar a mensagem, tente novamente mais tarde."
+  }
+}

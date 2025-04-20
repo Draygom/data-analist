@@ -1,5 +1,29 @@
+import { useTranslation } from "react-i18next";
+
 export function Projects() {
+  const { t } = useTranslation();
+
   const projects = [
+    {
+      title: "School Census",
+      description:
+        "School Census in the southernmost region of State of Bahia - Brazil",
+      url: "https://app.powerbi.com/view?r=eyJrIjoiNTFjNDFhYmMtZTA4NS00NmI1LTk5MmEtZmViOGMwYjdmNTFiIiwidCI6ImFlMWIxMGI1LTZjNGItNGUwNS1iYTQ1LTFmNWNlNGJhOTQ2MyJ9",
+      embed:
+        '<iframe title="School Census - Southernmost Region of Bahia" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNTFjNDFhYmMtZTA4NS00NmI1LTk5MmEtZmViOGMwYjdmNTFiIiwidCI6ImFlMWIxMGI1LTZjNGItNGUwNS1iYTQ1LTFmNWNlNGJhOTQ2MyJ9" frameborder="0" allowFullScreen="true"></iframe>',
+      colSpan: "col-span-1",
+    },
+    {
+      title: "GDP",
+      description: "GDP of the southernmost region of State of Bahia - Brazil",
+      url: "https://app.powerbi.com/view?r=eyJrIjoiNDQ0MDI3Y2ItOTJlYy00Zjc4LTlmMjMtMTEwOTNiYzZiYTA4IiwidCI6ImFlMWIxMGI1LTZjNGItNGUwNS1iYTQ1LTFmNWNlNGJhOTQ2MyJ9",
+      embed:
+        '<iframe title="GDP - Southernmost Region of Bahia" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNDQ0MDI3Y2ItOTJlYy00Zjc4LTlmMjMtMTEwOTNiYzZiYTA4IiwidCI6ImFlMWIxMGI1LTZjNGItNGUwNS1iYTQ1LTFmNWNlNGJhOTQ2MyJ9" frameborder="0" allowFullScreen="true"></iframe>',
+      colSpan: "col-span-1 md:col-span-2",
+    },
+  ];
+
+  const projectsPtbr = [
     {
       title: "Censo Escolar",
       description: "Censo Escolar no extremo sul da Bahia",
@@ -24,49 +48,48 @@ export function Projects() {
         <div className="relative p-4 text-center">
           <h2 className="relative z-50 mb-2">
             <span className="mr-2 font-headline text-3xl font-semibold text-gradient">
-              Projetos &
+              {t("projects.title-1")}
             </span>
             <span className="font-handwriting text-4xl text-yellow-400">
-              Portifólio
+              {t("projects.title-2")}
             </span>
           </h2>
-          <p className="relative text-sm text-gray-400">
-            Alguns dos projetos que já realizei ao longo da minha trajetória
-            como Analista e Consultor
-          </p>
+          <p className="relative text-sm text-gray-400">{t("projects.copy")}</p>
         </div>
 
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                className="section-card card-graph flex flex-col items-center text-center"
-                key={`project-${index}`}
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-gray-700 mb-2">
-                  {project.description}
-                </p>
+            {(t("projects.lang") === "pt-br" ? projectsPtbr : projects).map(
+              (project, index) => (
                 <div
-                  className="w-full aspect-[16/9] rounded-lg overflow-hidden border border-blue-100 shadow"
-                  dangerouslySetInnerHTML={{
-                    __html: project.embed
-                      .replace(/width="\d+"/, 'width="100%"')
-                      .replace(/height="\d+"/, 'height="100%"'),
-                  }}
-                />
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 button text-blue-500 border border-blue-100 bg-white hover:bg-blue-50 hover:text-blue-900"
+                  className="section-card card-graph flex flex-col items-center text-center"
+                  key={`project-${index}`}
                 >
-                  Acessar relatório
-                </a>
-              </div>
-            ))}
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 mb-2">
+                    {project.description}
+                  </p>
+                  <div
+                    className="w-full aspect-[16/9] rounded-lg overflow-hidden border border-blue-100 shadow"
+                    dangerouslySetInnerHTML={{
+                      __html: project.embed
+                        .replace(/width="\d+"/, 'width="100%"')
+                        .replace(/height="\d+"/, 'height="100%"'),
+                    }}
+                  />
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 button text-blue-500 border border-blue-100 bg-white hover:bg-blue-50 hover:text-blue-900"
+                  >
+                    Acessar relatório
+                  </a>
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

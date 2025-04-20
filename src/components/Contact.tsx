@@ -1,11 +1,13 @@
 import { FormEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 import { FaSpinner } from "react-icons/fa";
 import { HiCheckCircle } from "react-icons/hi2";
 
 export function Contact() {
   const form = useRef<HTMLFormElement>(null);
+  const { t } = useTranslation();
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -65,14 +67,13 @@ export function Contact() {
         <div className="mb-6">
           <h2 className="z-50 mb-2 text-gradient">
             <span className="mr-2 font-headline text-3xl font-semibold">
-              Fale
+              {t("contact.title-1")}
             </span>
-            <span className="font-handwriting text-4xl">Comigo</span>
+            <span className="font-handwriting text-5xl">
+              {t("contact.title-2")}
+            </span>
           </h2>
-          <p className="text-sm text-gray-800">
-            Entre em contato através do formulário abaixo, com certeza irei
-            poder te ajudar.
-          </p>
+          <p className="text-sm text-gray-800">{t("contact.copy")}</p>
         </div>
 
         <div className="flex flex-col gap-6 md:flex-row">
@@ -87,7 +88,7 @@ export function Contact() {
                   htmlFor="message"
                   className="mb-2 block ps-4 font-headline font-semibold"
                 >
-                  Mensagem:
+                  {t("contact.message")}
                 </label>
                 <textarea
                   id="message"
@@ -103,7 +104,7 @@ export function Contact() {
                     htmlFor="fullName"
                     className="mb-2 block ps-4 font-headline font-semibold"
                   >
-                    Seu nome:
+                    {t("contact.name")}
                   </label>
                   <input
                     className="w-full rounded-lg border-2 border-blue-200 bg-white p-2 outline-none shadow focus:border-blue-500 focus:shadow-lg transition"
@@ -118,7 +119,7 @@ export function Contact() {
                     htmlFor="email"
                     className="mb-2 block ps-4 font-headline font-semibold"
                   >
-                    Seu email:
+                    {t("contact.email")}
                   </label>
                   <input
                     className="w-full rounded-lg border-2 border-blue-200 bg-white p-2 outline-none shadow focus:border-blue-500 focus:shadow-lg transition"
@@ -138,15 +139,10 @@ export function Contact() {
                 >
                   {loading && <FaSpinner className="h-4 w-4 animate-spin" />}
                   {success && <HiCheckCircle className="h-4 w-4" />}
-                  Enviar mensagem
+                  {t("contact.button")}
                 </button>
 
-                {error && (
-                  <p className="mt-2>">
-                    Ocorreu um erro ao enviar a mensagem, tente novamente mais
-                    tarde.
-                  </p>
-                )}
+                {error && <p className="mt-2>">{t("contact.error")}</p>}
               </div>
             </form>
           </div>
