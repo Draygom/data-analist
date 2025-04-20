@@ -60,19 +60,16 @@ export function Contact() {
   // ];
 
   return (
-    <section
-      id="contact"
-      className="bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-800 text-white"
-    >
+    <section id="contact" className="dashboard-bg bg-gradient-to-r text-white">
       <div className="container mx-auto max-w-4xl p-4 py-8">
         <div className="mb-6">
-          <h2 className="z-50 mb-2">
+          <h2 className="z-50 mb-2 text-gradient">
             <span className="mr-2 font-headline text-3xl font-semibold">
               Fale
             </span>
             <span className="font-handwriting text-4xl">Comigo</span>
           </h2>
-          <p className="text-sm">
+          <p className="text-sm text-gray-800">
             Entre em contato através do formulário abaixo, com certeza irei
             poder te ajudar.
           </p>
@@ -80,7 +77,11 @@ export function Contact() {
 
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="basis-2/3">
-            <form ref={form} onSubmit={sendEmail}>
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="section-card bg-white/80 text-gray-900"
+            >
               <div className="mb-4">
                 <label
                   htmlFor="message"
@@ -91,7 +92,7 @@ export function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  className="h-36 w-full rounded-lg border border-white bg-transparent p-2 outline-none"
+                  className="h-36 w-full rounded-lg border-2 border-blue-200 bg-white p-2 outline-none shadow focus:border-blue-500 focus:shadow-lg transition"
                   required
                 />
               </div>
@@ -105,7 +106,7 @@ export function Contact() {
                     Seu nome:
                   </label>
                   <input
-                    className="w-full rounded-lg border border-white bg-transparent p-2 outline-none"
+                    className="w-full rounded-lg border-2 border-blue-200 bg-white p-2 outline-none shadow focus:border-blue-500 focus:shadow-lg transition"
                     type="text"
                     name="fullName"
                     id="fullName"
@@ -120,7 +121,7 @@ export function Contact() {
                     Seu email:
                   </label>
                   <input
-                    className="w-full rounded-lg border border-white bg-transparent p-2 outline-none"
+                    className="w-full rounded-lg border-2 border-blue-200 bg-white p-2 outline-none shadow focus:border-blue-500 focus:shadow-lg transition"
                     type="email"
                     name="email"
                     id="email"
@@ -132,7 +133,7 @@ export function Contact() {
               <div>
                 <button
                   type="submit"
-                  className="button flex items-center gap-2 text-yellow-800"
+                  className="button flex items-center gap-2 text-blue-500"
                   disabled={loading}
                 >
                   {loading && <FaSpinner className="h-4 w-4 animate-spin" />}

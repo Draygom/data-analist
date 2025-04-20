@@ -25,11 +25,11 @@ export function Services() {
   return (
     <section className="container mx-auto my-12 max-w-4xl p-4">
       <div className="p-4 text-center">
-        <p className="text-sm font-semibold uppercase text-yellow-600">
+        <p className="text-sm font-semibold uppercase text-blue-500">
           O que faço de melhor
         </p>
 
-        <h2 className="mb-2 font-bold text-yellow-800">
+        <h2 className="mb-2 font-bold text-gradient">
           <span className="mr-2 font-headline text-3xl">Meus</span>
           <span className="font-handwriting text-4xl">Serviços</span>
         </h2>
@@ -41,16 +41,16 @@ export function Services() {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-col gap-2 md:flex-row">
+      <div className="mt-6 flex flex-col gap-4 md:flex-row">
         {services.map((service, index) => (
           <div
-            className="basis-1/3 rounded-lg bg-yellow-600 p-4 text-white"
+            className="card-graph basis-1/3 flex flex-col items-center text-center"
             key={`service-${index}`}
           >
-            <div className="mb-2">{service.icon}</div>
-            <h3 className="text-xl font-bold">{service.title}</h3>
+            <div className="mb-2 text-3xl text-blue-500">{service.icon}</div>
+            <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
 
-            <p className="text-sm">{service.description}</p>
+            <p className="text-sm text-gray-700">{service.description}</p>
           </div>
         ))}
       </div>

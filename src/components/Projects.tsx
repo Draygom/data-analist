@@ -19,33 +19,38 @@ export function Projects() {
   ];
 
   return (
-    <section className="rounded-tl-[80px] bg-gradient-to-tr from-black to-gray-900 text-white md:rounded-tl-[180px]">
+    <section className="rounded-tl-[80px] bg-gradient-to-tr from-black to-zinc-900 text-white md:rounded-tl-[180px]">
       <div className="container mx-auto max-w-4xl p-4 py-12">
         <div className="relative p-4 text-center">
-          <h2 className="relative z-50 mb-2 text-white">
-            <span className="mr-2 font-headline text-3xl font-semibold">
+          <h2 className="relative z-50 mb-2">
+            <span className="mr-2 font-headline text-3xl font-semibold text-gradient">
               Projetos &
             </span>
-            <span className="font-handwriting text-4xl">Portifólio</span>
+            <span className="font-handwriting text-4xl text-yellow-400">
+              Portifólio
+            </span>
           </h2>
-
           <p className="relative text-sm text-gray-400">
-            Alguns dos projeto sque eu já realizei ao longo da minha trajetória
+            Alguns dos projetos que já realizei ao longo da minha trajetória
             como Analista e Consultor
           </p>
         </div>
 
         <div className="relative">
-          <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div
-                className="group relative flex-none w-[calc(100vw-2rem)] md:w-[calc(50vw-2rem)] lg:w-[calc(33.33vw-2rem)] cursor-default rounded-lg bg-cover bg-center"
+                className="section-card card-graph flex flex-col items-center text-center"
                 key={`project-${index}`}
               >
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <p className="text-sm">{project.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-700 mb-2">
+                  {project.description}
+                </p>
                 <div
-                  className="mt-4 aspect-w-16 aspect-h-9"
+                  className="w-full aspect-[16/9] rounded-lg overflow-hidden border border-blue-100 shadow"
                   dangerouslySetInnerHTML={{
                     __html: project.embed
                       .replace(/width="\d+"/, 'width="100%"')
@@ -56,7 +61,7 @@ export function Projects() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-block rounded bg-white px-4 py-2 text-sm font-semibold text-yellow-600 hover:bg-yellow-100"
+                  className="mt-4 button text-blue-500 border border-blue-100 bg-white hover:bg-blue-50 hover:text-blue-900"
                 >
                   Acessar relatório
                 </a>
